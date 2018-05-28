@@ -1,0 +1,576 @@
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+    height: 100%;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+img {
+    max-width: 100%;
+}
+
+span.line-1,
+span.line-2,
+span.line-3 {
+    height: 2px;
+    background: #fff;
+    display: block;
+    margin: 3px 0px;
+    transition: 0.5s;
+}
+
+span.line-3 {
+    width: 20px;
+}
+
+span.line-2 {
+    width: 15px;
+}
+
+span.line-1 {
+    width: 10px;
+}
+
+button#sidebarCollapse {
+    padding: 6px 8px;
+    width: 40px;
+    transition: 0.5s;
+}
+
+button#sidebarCollapse:hover span.line-1,
+button#sidebarCollapse:hover span.line-2,
+button#sidebarCollapse:hover span.line-3 {
+    width: 100%;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+    background: #0596ff;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.inner-wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 180px;
+    max-width: 180px;
+    background: #fff;
+    color: #000;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -180px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #fff;
+}
+
+#sidebar ul.components {
+    padding: 0px 0;
+    border-bottom: 0px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #0596ff;
+}
+
+#sidebar ul li ul li a {
+    padding-left: 15px !important;
+    color: #fff;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before,
+a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #0596ff;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+.hdr-add-to-cart {
+    float: right;
+    line-height: normal;
+    vertical-align: middle;
+    padding: 10px 0px;
+}
+
+.hdr-add-to-cart .fa-cart-plus {
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0px 1px 3px #000;
+    margin-left: 10px;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    padding: 20px 20px 0px 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.vertical-offset-100 {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.login-page {
+    background-position: top center;
+    background-image: url(../images/login-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.login-inner {
+    box-shadow: 1px 1px 2px #4c4a4a;
+}
+
+.login-page .panel-headingg {
+    text-align: center;
+}
+
+.login-page .panel-headingg h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #0596ff;
+    padding: 20px 0px;
+}
+
+.login-page .panel-body a.btn {
+    max-width: 100px;
+    margin: 0px auto;
+    display: block;
+    background: #0596ff;
+    color: #fff;
+}
+
+.inner-banner {
+    margin: 0px 0px 20px 0px;
+}
+
+.top-section {
+    margin-bottom: 20px;
+}
+
+.cart-img-des {
+    text-align: center;
+}
+
+.cart-img-des .el-hght {
+    height: 240px;
+}
+
+.cart-img-des p,
+.quality-div h5 {
+    color: #0596ff;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cart-img-des .btn {
+    display: block;
+    border-radius: 0px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #0596ff;
+    font-weight: 600;
+    background: #0596ff;
+    color: #fff;
+    padding: 8px 0px;
+}
+
+.quality-div {
+    text-align: center;
+}
+
+.bottom-section {
+    background: #e2f3ff;
+    padding: 20px 0px 10px 0px;
+}
+
+.quality-div h2 {
+    font-weight: 600;
+    color: #000;
+}
+
+.quality-div img {
+    width: 40px;
+}
+
+.quality-div p {
+    color: #000;
+    padding: 0px 30px;
+}
+
+footer {
+    background: #0596ff;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+footer p {
+    margin: 0px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.row.innr-scrol {
+    max-height: 650px;
+    overflow-x: hidden;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+
+/***************** Check box Button Effect ***********************/
+
+.checkbox .cr,
+.radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #d9d9d9;
+    border-radius: .25em;
+    width: 18px;
+    height: 18px;
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+    line-height: 13px;
+    vertical-align: middle;
+}
+
+.radio .cr {
+    border-radius: 50% !important;
+    color: #0596ff;
+}
+
+.checkbox .cr .cr-icon,
+.radio .cr .cr-icon {
+    /*position: absolute;line-height: 0;top: 50%;left: 5px;*/
+    font-size: 8px;
+}
+
+.radio .cr .cr-icon {
+    margin-left: 0.04em;
+}
+
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + .cr > .cr-icon,
+.radio label input[type="radio"] + .cr > .cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+.radio label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled + .cr,
+.radio label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+}
+
+.radio label>input:checked~span {
+    border: 1px solid #0596ff !important;
+}
+
+.mt-radio-list .radio label {
+    padding-left: 0px;
+}
+
+.mt-radio-inline .radio {
+    display: inline-block;
+}
+
+.mt-checkbox-inline .label-cbx {
+    margin-right: 15px;
+}
+
+.mt-radio-inline .radio:first-child label {
+    padding-left: 0px;
+}
+
+
+/***************** End Check box Button Effect ***********************/
+
+.pop-cart-img {
+    display: inline-block;
+    width: 120px;
+    vertical-align: top;
+}
+
+hide {
+  display: none;
+}
+.pop-cart-details h3{margin: 0px; text-transform: uppercase;  }
+
+.pop-cart-details {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px 0px 0px 15px;
+}
+
+.pop-cart-details button.btn {
+    background: #0596ff;
+    color: #fff;
+    border-radius: 0px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+}
+
+.radio label:first-child {
+    padding-left: 0px;
+    padding-right: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.radio.form-check-inline {
+    display: inline-block;
+}
+
+.pop-cart-details .custom-select {
+    padding: 5px 10px;
+    color: #b7b7b7;
+    border-radius: 5px;
+    box-shadow: 1px 3px 0px #ddd;
+    border: 1px solid #ddd;
+}
+
+.date-picker .form-group .control-label {
+    display: block;
+    color: #cecbcb;
+    text-align: left;
+}
+
+.input-group {
+    display: inline-block;
+    vertical-align: middle;
+    width: 120px;
+}
+
+.date-picker .form-horizontal .form-group {
+    display: inline-block;
+    margin: 0px;
+}
+
+.date-picker {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.date-picker .input-group {
+    border-radius: 5px;
+    box-shadow: 1px 3px 0px #ddd;
+    border: 1px solid #ddd;
+}
+
+.modal-footer button.btn {
+    background: #269abc;
+    color: #fff;
+}
+
+.login-page-elect{ position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 15px;}
+
+
+/* Rectangle Out */
+
+.hvr-rectangle-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    background: #e1e1e1;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.hvr-rectangle-out:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #156e98;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvr-rectangle-out:hover,
+.hvr-rectangle-out:focus,
+.hvr-rectangle-out:active {
+    color: white;
+}
+
+.hvr-rectangle-out:hover:before,
+.hvr-rectangle-out:focus:before,
+.hvr-rectangle-out:active:before {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -180px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+/* dev css */
+.error{
+	color:red;
+}

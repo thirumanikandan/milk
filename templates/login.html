@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Login</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="/static/ui/css/bootstrap.css">
+<!-- UI CSS -->
+<link rel="stylesheet" href="/static/ui/css/style.css">
+<link rel="stylesheet" href="/static/dev/dev.css"> 
+</head>
+<body>
+	{% include "language_change.html" %}    
+	<div class="container login-page">
+		<select class="custom-select login-page-elect" id="language_selection">
+			<option value="English" selected>English</option>
+			<option value="Tamil">Tamil</option>
+			<option value="Kannada">Kannada</option>
+		</select>
+		<div class="row vertical-offset-100">
+			<div class="col-md-12">
+				<div class="panel panel-default login-inner">
+					<div class="panel-headingg">
+						<h3 class="panel-title">LOGIN</h3>
+					</div>
+					<div class="panel-body">
+						<form accept-charset="UTF-8" role="form" id="login_check">
+						{%csrf_token%}
+							<fieldset>
+								<div class="form-group">
+									<input class="form-control" placeholder="User Name" name="username"
+										id="username" type="text" /><span class="error"></span>
+								</div>
+								<div class="form-group">
+									<input class="form-control" placeholder="Password"
+										name="password" id="password" type="password" /><span class="error"></span>
+								</div>
+								<input type="submit" class="btn btn-md hvr-rectangle-out"
+									value="Login" />
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- dev Js -->
+<script src="/static/ui/js/jquery-1.12.0.min.js"></script>
+<script src="/static/dev/js/lib/jquery.validate.min.js"></script>
+<script src="/static/dev/js/login.js"></script>
+</html>

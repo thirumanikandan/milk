@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AAROKYA</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="/static/ui/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="/static/ui/css/style.css"> 
+    <link rel="stylesheet" href="/static/dev/dev.css"> 
+</head>
+
+<body>
+	{% include "language_change.html" %}    
+    <div class="wrapper">
+        <div class="inner-wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>AAROKYA</h3> </div>
+                <ul class="list-unstyled components">
+                    <li> <a href="#">Home</a> </li>
+                    <li class="active"> <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Daily Product</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="#">Butter</a></li>
+                            <li><a href="#">Carot</a></li>
+                            <li><a href="#">Kerai</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="#">Pages</a>
+                        <!--<ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="#">Page 1</a></li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                        </ul>-->
+                    </li>
+                    <li> <a href="#">Stand Alone</a> </li>
+                    <li> <a href="#">Report</a> </li>
+                    <li> <a href="#">Services</a> </li>
+                    <li> <a href="#">Contact Us</a> </li>
+                </ul>
+            </nav>
+            <!-- Page Content Holder -->
+            <div id="content">
+                <div class="top-section">
+                    <header>
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"> <span class="line-1"></span> <span class="line-2"></span> <span class="line-3"></span> </button>
+                        <div class="hdr-add-to-cart">
+                            <label class="current_user" id="{{ user_id }}">{{ user_name|title }}</label> <a href="/logout/"><i class="fa fa-cart-plus">Logout</i></a> </div>
+                    </header>
+                    <div class="inner-banner"> <img src="/static/ui/images/inner-banner.png"> </div>
+                    <div class="row innr-scrol" id="product_list">
+                       <!--  <div class="col-md-4">
+                            <div class="cart-img-des"> <img class="el-hght" src="/static/ui/images/cart-1.png">
+                                <p>Butter</p> <a href="#" class="btn btn-info navbar-btn hvr-rectangle-out" data-toggle="modal" data-target="#myModal">Add to Cart</a> </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cart-img-des"> <img class="el-hght" src="/static/ui/images/cart-2.png">
+                                <p>CAROT</p> <a href="#" class="btn btn-info navbar-btn hvr-rectangle-out">Add to Cart</a> </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cart-img-des"> <img class="el-hght" src="/static/ui/images/cart-3.png">
+                                <p>KERAI</p> <a href="#" class="btn btn-info navbar-btn hvr-rectangle-out">Add to Cart</a> </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cart-img-des"> <img class="el-hght" src="/static/ui/images/cart-2.png">
+                                <p>CAROT</p> <a href="#" class="btn btn-info navbar-btn hvr-rectangle-out">Add to Cart</a> </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="bottom-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="quality-div"> <img src="/static/ui/images/quality.png">
+                                <h5>QUALITY</h5>
+                                <h2>WHAT WE DO</h2>
+                                <p>Donec et porttitor risus. Suspendisse blandit lacus et accumsan ornare. Nulla eget erat a nulla varius facilisis ac ac velit. Suspendisse in lectus sed felis tincidunt finibus quis in quam. Cras quis diam libero.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="quality-div"> <img src="/static/ui/images/delivary.png">
+                                <h5>DELIVERY</h5>
+                                <h2>HOW WE DO</h2>
+                                <p>Donec et porttitor risus. Suspendisse blandit lacus et accumsan ornare. Nulla eget erat a nulla varius facilisis ac ac velit. Suspendisse in lectus sed felis tincidunt finibus quis in quam. Cras quis diam libero.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Copyright © 2018. Milk Province</p>
+        </footer>
+    </div>
+    <div id="product_order_modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                {%csrf_token%}
+                    <div class="pop-cart-img"><img id="product_order_img" src="/static/ui/images/popup-cart.png"></div>
+                    <div class="pop-cart-details">
+                        <h3 id="product_order_title"> </h3>
+                        <div class="radio-btn">
+                            <div class="radio form-check-inline">
+                                <label>
+                                    <input type="radio" id="quantity_status" name="test" value="1" checked> <span class="cr"><i class="cr-icon fa fa-circle"></i></span> Quantity </label>
+                            </div>
+                            <div class="radio form-check-inline">
+                                <label class="dont-want">
+                                    <input type="radio" id="dontwant_status" name="test" value="1"> <span class="cr"><i class="cr-icon fa fa-circle"></i></span> Dont Want </label>
+                            </div>
+                        </div>
+						<div class="quantity_status">
+							<select class="custom-select" id="pro_order_quantity_id">
+								<option value="0">--Select--</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+							</select>
+							<label>* <span id="order_product_price"></span> each</label><br><br>
+							<label>Total Amount : <span id="tot_order_product_price">0</span></label>
+							<div class="date-picker">
+								<form action="https://formden.com/post/MlKtmY4x/" id="pro_order_modal_form"
+									class="form-horizontal" method="post">
+									<div class="form-group">
+										<label class="control-label requiredField" for="date">From</label>
+										<div class="input-group">
+											<input class="form-control" id="pro_from_date" name="date"
+												placeholder="MM/DD/YYYY" type="text" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label requiredField" for="date">To</label>
+										<div class="input-group">
+											<input class="form-control" id="pro_to_date" name="date"
+												placeholder="MM/DD/YYYY" type="text" />
+										</div>
+									</div>
+								</form>
+							</div>
+							<button onclick="product_order_conform()" type="button"
+								class="btn hvr-rectangle-out">Submit Order</button>
+						</div>
+						<div class="dontwant_status" style="display: none">
+							<div class="date-picker">
+								<form action="https://formden.com/post/MlKtmY4x/"
+									class="form-horizontal" method="post">
+									<div class="form-group">
+										<label class="control-label requiredField" for="date">From</label>
+										<div class="input-group">
+											<input class="form-control" id="pro_from_date" name="date"
+												placeholder="MM/DD/YYYY" type="text" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label requiredField" for="date">To</label>
+										<div class="input-group">
+											<input class="form-control" id="pro_to_date" name="date"
+												placeholder="MM/DD/YYYY" type="text" />
+										</div>
+									</div><br>
+									<div class="form-group">
+										<label class="control-label requiredField" for="date">Dont
+											want Reason</label>
+										<div class="input-group">
+											<input class="form-control" id="dontwant_reason"
+												name="dontwant_reason" placeholder="Reason" type="text" />
+										</div>
+									</div>
+								</form>
+							</div>
+							
+							<button onclick="product_order_dontwant()" type="button"
+								class="btn hvr-rectangle-out">Submit Order</button>
+						</div>
+					</div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- jQuery CDN -->
+    <script src="/static/ui/js/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="/static/ui/js/bootstrap.js"></script>
+    <script type="text/javascript">
+					$(document).ready(function() {
+						$('#sidebarCollapse').on('click', function() {
+							$('#sidebar').toggleClass('active');
+						});
+					});
+				</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var date_input = $('input[name="date"]'); //our date input has the name "date"
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+            date_input.datepicker({
+                format: 'mm/dd/yyyy'
+                , container: container
+                , todayHighlight: true
+                , autoclose: true
+            , })
+        })
+    </script>
+    <!-- dev js -->
+   	<script src="/static/dev/js/index.js"></script>
+</body>
+
+</html>
