@@ -85,6 +85,7 @@ class CustomerDetails(models.Model):
      address1 = models.TextField(null=True, blank=True)
      address2 = models.TextField(null=True, blank=True)
      company = models.ForeignKey(CompanyDetails,related_name='customer_company_id', null=True, blank=True)
+     area = models.ForeignKey(AreaDetails,related_name='customer_area_id', null=True, blank=True)
      is_active = models.BooleanField(default=True)
      class Meta:
         db_table = 'customer_info'
@@ -140,8 +141,6 @@ class OrderDetails(models.Model):
      price = models.FloatField(null=True, blank=True)
      product = models.ForeignKey(ProductDetails,related_name='order_product_id', null=True, blank=True)
      customer = models.ForeignKey(CustomerDetails,related_name='order_customer_id', null=True, blank=True)
-     area = models.ForeignKey(AreaDetails,related_name='order_area_id', null=True, blank=True)
-     route = models.ForeignKey(RouteDetails,related_name='order_route_id', null=True, blank=True)
      company = models.ForeignKey(CompanyDetails,related_name='order_company_id', null=True, blank=True)
      is_active = models.BooleanField(default=True)
      class Meta:

@@ -263,7 +263,7 @@ class CustomerDetailsCRUD(APIView):
             datas = json.loads(request.body);
             print ("-----------===========-----",datas['data'][0]['name'])
             # your code...
-            AddStatus = CustomerDetails(name = str(datas['data'][0]['name']),email = str(datas['data'][0]['email']),mobile = str(datas['data'][0]['mobile']),phone = str(datas['data'][0]['phone']),address1 = str(datas['data'][0]['address1']),address2 = str(datas['data'][0]['address2']),company_id = int(datas['data'][0]['company']))
+            AddStatus = CustomerDetails(name = str(datas['data'][0]['name']),email = str(datas['data'][0]['email']),mobile = str(datas['data'][0]['mobile']),phone = str(datas['data'][0]['phone']),address1 = str(datas['data'][0]['address1']),address2 = str(datas['data'][0]['address2']),area_id = int(datas['data'][0]['area']),company_id = int(datas['data'][0]['company']))
             AddStatus.save()
             if AddStatus.id:
                 return HttpResponse(json.dumps({'status': 'M1'}))
@@ -278,7 +278,7 @@ class CustomerDetailsCRUD(APIView):
             print ("---------Customer Details Details Put------",request.body)
             datas = json.loads(request.body);
             print ("-----------===========-----",datas['data'][0]['id'])
-            AddStatus = CustomerDetails.objects.filter(id = int(datas['data'][0]['id'])).update(name = str(datas['data'][0]['name']),email = str(datas['data'][0]['email']),mobile = str(datas['data'][0]['mobile']),phone = str(datas['data'][0]['phone']),address1 = str(datas['data'][0]['address1']),address2 = str(datas['data'][0]['address2']),company_id = int(datas['data'][0]['company']))
+            AddStatus = CustomerDetails.objects.filter(id = int(datas['data'][0]['id'])).update(name = str(datas['data'][0]['name']),email = str(datas['data'][0]['email']),mobile = str(datas['data'][0]['mobile']),phone = str(datas['data'][0]['phone']),address1 = str(datas['data'][0]['address1']),address2 = str(datas['data'][0]['address2']),area_id = int(datas['data'][0]['area']),company_id = int(datas['data'][0]['company']))
             return HttpResponse(json.dumps({'status': 'M1'}))
         except Exception as e:
             print (e)
@@ -422,7 +422,7 @@ class OrderDetailsCRUD(APIView):
             datas = json.loads(request.body);
             print ("-----------===========-----",datas['data'][0]['quantity'])
             # your code...
-            AddStatus = OrderDetails(quantity = int(datas['data'][0]['quantity']),order_date = str(datas['data'][0]['order_date']),from_date = str(datas['data'][0]['from_date']),to_date = str(datas['data'][0]['to_date']),price = float(datas['data'][0]['price']),product_id = int(datas['data'][0]['product']),customer_id = int(datas['data'][0]['customer']),area_id = int(datas['data'][0]['area']),route_id = int(datas['data'][0]['route']),company_id = int(datas['data'][0]['company']))
+            AddStatus = OrderDetails(quantity = int(datas['data'][0]['quantity']),order_date = str(datas['data'][0]['order_date']),from_date = str(datas['data'][0]['from_date']),to_date = str(datas['data'][0]['to_date']),price = float(datas['data'][0]['price']),product_id = int(datas['data'][0]['product']),customer_id = int(datas['data'][0]['customer']),company_id = int(datas['data'][0]['company']))
             AddStatus.save()
             if AddStatus.id:
                 return HttpResponse(json.dumps({'status': 'M1'}))
@@ -437,7 +437,7 @@ class OrderDetailsCRUD(APIView):
             print ("---------Order Details Details Put------",request.body)
             datas = json.loads(request.body);
             print ("-----------===========-----",datas['data'][0]['id'])
-            AddStatus = OrderDetails.objects.filter(id = int(datas['data'][0]['id'])).update(quantity = int(datas['data'][0]['quantity']),order_date = str(datas['data'][0]['order_date']),from_date = str(datas['data'][0]['from_date']),to_date = str(datas['data'][0]['to_date']),price = float(datas['data'][0]['price']),product_id = int(datas['data'][0]['product']),customer_id = int(datas['data'][0]['customer']),area_id = int(datas['data'][0]['area']),route_id = int(datas['data'][0]['route']),company_id = int(datas['data'][0]['company']))
+            AddStatus = OrderDetails.objects.filter(id = int(datas['data'][0]['id'])).update(quantity = int(datas['data'][0]['quantity']),order_date = str(datas['data'][0]['order_date']),from_date = str(datas['data'][0]['from_date']),to_date = str(datas['data'][0]['to_date']),price = float(datas['data'][0]['price']),product_id = int(datas['data'][0]['product']),customer_id = int(datas['data'][0]['customer']),company_id = int(datas['data'][0]['company']))
             return HttpResponse(json.dumps({'status': 'M1'}))
         except Exception as e:
             print (e)

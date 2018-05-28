@@ -74,8 +74,6 @@ function product_order_conform(){
 	var quantity = $('#pro_order_quantity_id option:selected').val();
 	var pro_from_date = from_date.split('/')[2]+'-'+from_date.split('/')[0]+'-'+from_date.split('/')[1];
 	var pro_to_date = to_date.split('/')[2]+'-'+to_date.split('/')[0]+'-'+to_date.split('/')[1];
-	var area = 1
-	var route = 1
 	var company = 1
 	var today = new Date();           
     var formattedtoday =  today.getFullYear() + '-'+ + (today.getMonth() + 1) +'-'+ today.getDate();
@@ -90,8 +88,6 @@ function product_order_conform(){
 	                	'price':price,
 	                	'product':product_id,
 	                	'customer':login_user_id,
-	                	'area':area,
-	                	'route':route,
 	                	'company':company,
 	                }
 	               ]}
